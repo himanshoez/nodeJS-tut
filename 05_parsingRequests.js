@@ -11,7 +11,8 @@ app.use('/add-product', (req, res, next)=>{
     res.send('<form action ="/product" method = "POST"><input type= "text" name = "Product" placeholder = "Enter the product"><button>Add Product</button></form>');    
 })
 
-app.use('/product', (req, res, next)=>{
+//  middleware will only listen to POST requests 
+app.post('/product', (req, res, next)=>{
     console.log(req.body);
     res.redirect('/');
 })
